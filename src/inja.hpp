@@ -643,7 +643,7 @@ public:
 
 	std::map<Parsed::Delimiter, Regex> regex_map_delimiters = {
 		{Parsed::Delimiter::Statement, Regex{"\\{\\%\\s*(.+?)\\s*\\%\\}"}},
-		{Parsed::Delimiter::LineStatement, Regex{"(?:^|\\n)## *(.+?) *(?:\\n|$)"}},
+		{Parsed::Delimiter::LineStatement, Regex{"[^\\r\\n]* *## *(.+?) *(?:\\n|$)"}},
 		{Parsed::Delimiter::Expression, Regex{"\\{\\{\\s*(.+?)\\s*\\}\\}"}},
 		{Parsed::Delimiter::Comment, Regex{"\\{#\\s*(.*?)\\s*#\\}"}}
 	};
